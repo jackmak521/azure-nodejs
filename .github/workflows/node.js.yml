@@ -5,8 +5,7 @@ name: Node.js CI
 
 on:
   push:
-    branches-ignore:
-      - master
+    - master
 
 
 jobs:
