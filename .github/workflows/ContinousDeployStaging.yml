@@ -25,7 +25,6 @@ jobs:
 
     steps:
       - name: Deploy to Azure
-        uses: azure/webapps-deploy@v2
         with: 
           app-name: ActionTestNodeJS
           publish-profile: ${{ secrets.azureWebAppPublishProfile }}
