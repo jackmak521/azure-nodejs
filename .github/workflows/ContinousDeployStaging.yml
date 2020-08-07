@@ -6,6 +6,7 @@ on:
 
 jobs:
   build:
+    name: Build Code
     if: contains(github.event.pull_request.labels.*.name, 'staging')
     runs-on: ubuntu-latest
 
@@ -23,7 +24,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
       - name: Deploy to Azure
         uses: azure/webapps-deploy@v2
         with: 
