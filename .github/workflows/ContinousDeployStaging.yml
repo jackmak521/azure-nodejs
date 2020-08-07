@@ -8,7 +8,6 @@ on:
 jobs:
   build:
     name: Build Code
-    if: contains(github.event.pull_request.labels.*.name, 'staging')
     runs-on: ubuntu-latest
 
     steps:
