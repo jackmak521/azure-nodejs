@@ -28,4 +28,4 @@ jobs:
         uses: azure/webapps-deploy@v2
         with: 
           app-name: ActionTestNodeJS
-          publish-profile: ${{ secrets.azureWebAppPublishProfile_Production }}
+          publish-profile: ${{ secrets.AZUREWEBAPPPUBLISHPROFILE_PRODUCTION }}
