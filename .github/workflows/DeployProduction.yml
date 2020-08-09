@@ -27,5 +27,5 @@ jobs:
       - name: Deploy to Azure
         uses: azure/webapps-deploy@v2
         with: 
-          app-name: ActionTestNodeJS
-          publish-profile: ${{ secrets.azureWebAppPublishProfile_Production }}
+          app-name: ActionTestNodeJSProduction
+          publish-profile: ${{ secrets.AZUREWEBAPPPUBLISHPROFILE_PRODUCTION }}
