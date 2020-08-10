@@ -6,26 +6,24 @@ on:
       - master
 
 jobs:
-  build:
+  build-and-deploy:
+    name: Build Code
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-      - name: npm install and build webpack
+      - name: checkout repo
+        uses: actions/checkout@v1
+
+      - name: setup node
+        uses: actions/setup-node@v1 
+
+      - name: npm install and build
         run: |
           npm install
           npm run build --if-present
-
-  deploy:
-    name: Deploy Node.js app to Azure
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v1
-
+          
       - name: Deploy to Azure
         uses: azure/webapps-deploy@v2
-        with: 
+        with:  
           app-name: ActionTestNodeJSProduction
           publish-profile: ${{ secrets.AZUREWEBAPPPUBLISHPROFILE_PRODUCTION }}
